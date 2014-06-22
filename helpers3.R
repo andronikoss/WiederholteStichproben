@@ -11,7 +11,7 @@ calcul <- function(L, alpha = 0.25, beta=0.125, Number.of.Simulations=100,
     
     if(type=="alle"){
         plot(seq(1,100,length=10), seq(-5,20,length=10), type="n", xlab="", ylab="", main="")
-        title(main= paste("KQ-Schätzgeraden aller", select, "Stichproben"),
+        title(main= paste("KQ-Schaetzgeraden aller", select, "Stichproben"),
               xlab="Rechnungsbetrag", ylab="Trinkgeld", cex.main =1.8, cex.lab = 1.5)
         pal <- gray.colors(Number.of.Simulations, start = 0.1, end = 0.6, gamma = 2.2, alpha = 0.5)
         pal <- rev(pal)
@@ -24,7 +24,7 @@ calcul <- function(L, alpha = 0.25, beta=0.125, Number.of.Simulations=100,
     
     if(type=="einzeln"){
         plot(seq(1,100,length=10), seq(-5,20,length=10), type="n", xlab="", ylab="", main="")
-        title(main=paste("KQ-Schätzgerade der", select,". Stichprobe"), 
+        title(main=paste("KQ-Schaetzgerade der", select,". Stichprobe"), 
               xlab="Rechnungsbetrag", ylab="Trinkgeld", cex.main =1.8, cex.lab = 1.5)
         abline(M[select,], col= "darkblue", lwd=1.2)
         points(x,N[select,], pch=19, col=rgb(0,0,0,0.3))
