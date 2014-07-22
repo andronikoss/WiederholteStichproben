@@ -1,5 +1,5 @@
 
-# Das Ziel des Befehles ist eien Datensatz generieren.
+# Das Ziel des Befehles ist einen Datensatz generieren.
 # ----
 # Die Parameter sind:
 # ----
