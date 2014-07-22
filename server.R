@@ -1,6 +1,6 @@
 
+source("helpers1.R")
 source("helpers2.R")
-source("helpers3.R")
 
 shinyServer(function(input, output){
         output$densityPlot <- renderPlot({
