@@ -12,6 +12,6 @@ runGitHub("WiederholteStichproben", "andronikoss")
 ```
 
 Erfolgreiches Ausführen dieser Schritte wird Ihnen ermöglichen die Animation Local auf Ihrem eigenen Rechner laufen lassen.   
-Für ausführliche Informationen wie man eine Anwendung mithilfe RStudio Shiny Packet schreibt finden Sie unter folgendem [Tutorium.](http://shiny.rstudio.com/tutorial/)
+Für ausführliche Informationen wie man eine Anwendung mithilfe RStudio Shiny Packet schreibt, finden Sie unter folgendem [Tutorium.](http://shiny.rstudio.com/tutorial/)
 
 
