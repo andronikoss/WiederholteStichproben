@@ -1,6 +1,5 @@
 
-
-# Der Befehl calcul ermöglicht die Visualisierung
+# Der Befehl calcul ermÃ¶glicht die Visualisierung
 # ----
 # Die Parameter sind:
 # ----
@@ -9,7 +8,7 @@
 ## beta: Steigungsparameter: 
 ## Number.of.Simulations: Die Anzahl der Simulationen
 ## type: Die grafische Darstellun der Regressionsgeraden 
-## dichte: Die geschätzte Dichtefunktion wird aktiviert
+## dichte: Die geschÃ¤tzte Dichtefunktion wird aktiviert
 ## select: Die Anzahl von Stichproben, die man abbilden will
 library(MASS)
 calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
@@ -26,7 +25,7 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
     select <- as.integer(select)
     
     
-    # Bedingung für 'type'=='alle' wird definiert
+    # Bedingung fÃ¼r 'type'=='alle' wird definiert
     if(type == "alle"){
         plot(seq(1, 100,length = 10), seq(-5, 20, length = 10),
              type = "n", xlab = "", ylab = "", main = "",
@@ -45,7 +44,7 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
         }
      
         pal <- gray.colors(Number.of.Simulations, start = 0.1,
-                           end = 0.6, gamma = 2.2, alpha = 0.5)
+                           end = 0.6, gamma = 2.2)
         pal <- rev(pal)
         for(i in 1:select){
             abline(a = M[i, 1], b = M[i, 2], col = pal[i], lwd=1.2)        
@@ -53,7 +52,7 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
         abline(a = M[select, 1], b = M[select, 2], lwd = 1.5)
         
     }
-    # Bedingung für 'type'=='einzeln' wird definiert
+    # Bedingung fÃ¼r 'type'=='einzeln' wird definiert
     if(type == "einzeln"){
         plot(seq(1, 100, length = 10), seq(-5, 20, length = 10), type = "n",
              xlab = "", ylab = "", main = "",
@@ -75,15 +74,15 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
  #   Diechtfunktionen werden berechnet
  # -------------------------------------- 
  # -------
- # o Erste Grafik für Steigungsparameter
+ # o Erste Grafik fÃ¼r Steigungsparameter
  # -------   
     # Parameteranpassungen
     par(mar = c(7,6,5,1), mgp = c(4, 2.4, 0))
     
-    # Das Histogram für den Steigungsparameter 'beta' wird gebildet
+    # Das Histogram fÃ¼r den Steigungsparameter 'beta' wird gebildet
     hist.den.beta <- hist(M[1:select, 2], plot = F,breaks = 15)
     
-    # Im Falle einer beobachtung wird keine Dichte berechnet, weil für die
+    # Im Falle einer beobachtung wird keine Dichte berechnet, weil fÃ¼r die
     # Berechnung der Bandbreite mindestens zwei Werte notwendig sind.
     if(select != 1){
         den.beta <- density(M[1:select, 2])
@@ -107,10 +106,10 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
 
     par(mar = c(7,6,5,1), mgp = c(4.7, 2, 0))
     title(xlab = bquote(hat(beta)), cex.main = 1.8, cex.lab = 1.8, font.main = 1)
-    # Überschrift wird ergänzt
+    # Ãberschrift wird ergÃ¤nzt
 #     mtext(expression(paste("Histogramm ", (beta))), side = 3, cex = 1.2)
     
-    # Für den Fall mit nur einer Stichprobe wird folgende Bedingung definiert.
+    # FÃ¼r den Fall mit nur einer Stichprobe wird folgende Bedingung definiert.
     if(dichte == TRUE & select != 1){
         lines(den.beta)
         polygon(den.beta, col = "darkred", density = 20)    
@@ -128,7 +127,7 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
     abline(v = beta, lwd = 1)
  
  # -------
- # o Zweite Grafik für Niveauparameter
+ # o Zweite Grafik fÃ¼r Niveauparameter
  # -------
     # Parameteranpassung
     par(mar = c(7,6,5,1), mgp = c(4, 2.4, 0))
@@ -153,10 +152,10 @@ calcul <- function(L, alpha = 0.2, beta = 0.13, Number.of.Simulations = 100,
     
     par(mar = c(7,6,5,1), mgp = c(4.7, 2.4, 0))
     title(xlab = bquote(hat(alpha)), cex.lab = 1.8, font.lab = 1)
-    # Überschrift wird ergänzt
+    # Ãberschrift wird ergÃ¤nzt
 #     mtext(expression(paste("Histogramm ", (alpha))),side = 3, cex = 1.2)
  
-    # Für den Fall mit nur einer Stichprobe wird folgende Bedingung definiert.
+    # FÃ¼r den Fall mit nur einer Stichprobe wird folgende Bedingung definiert.
     if(dichte == TRUE & select != 1){
         lines(den.alpha)
         polygon(den.alpha, col = "darkred", density = 20)
