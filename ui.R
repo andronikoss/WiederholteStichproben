@@ -17,7 +17,7 @@ shinyUI( fluidPage(withMathJax(),
                             value=2, min=0, max=10, step=0.1,),
                 div(sliderInput('pick', 'Stichproben \\( (S) \\)',
                     value=1, min=1, max=100, step=1,
-                    animate=animationOptions(interval=1000,
+                    animate=animationOptions(interval=600,
                     playButton = HTML('<p align="right"><button type="button" class="btn btn-small btn-primary">
                                     <span class="icon-play"></span> Start </button></p>'),
                     pauseButton = HTML('<p align="right"><button type="button" class="btn btn-small btn-primary">
